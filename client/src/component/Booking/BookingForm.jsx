@@ -151,29 +151,29 @@ const BookingForm = () => {
 
   if (bookingStatus === 'confirmed') {
     return <ConfirmationPage restaurantName={restaurantName} />;
-
   }
+
   const handleBackToHome = () => {
-       Navigate('/'); // Adjust this path if your home route is different
-     }
+    Navigate('/'); // Adjust this path if your home route is different
+  }
 
   return (
-      <Box
-            bg={bgColor}
-            minH="100vh"
-            py={16}
-            bgImage="url('https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')"
-            bgSize="cover"
-            bgPosition="center"
-          >
-            <Container maxW="lg">
-              <Box
-                bg={cardBg}
-                p={8}
-                borderRadius="xl"
-                boxShadow="2xl"
-                opacity={1}
-              >
+    <Box
+      bg={bgColor}
+      minH="100vh"
+      py={16}
+      bgImage="url('https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')"
+      bgSize="cover"
+      bgPosition="center"
+    >
+      <Container maxW="lg">
+        <Box
+          bg={cardBg}
+          p={8}
+          borderRadius="xl"
+          boxShadow="2xl"
+          opacity={1}
+        >
           <Heading as="h1" size="xl" textAlign="center" mb={8} color={headingColor}>
             Book a Table at {restaurantName || "..."}
           </Heading>
@@ -197,13 +197,18 @@ const BookingForm = () => {
                   <Icon as={FaUsers} mr={2} color={headingColor} />
                   Number of People
                 </FormLabel>
-                <Input
-                  type="number"
+                <RadioGroup
+                  onChange={(value) => setNumberOfPeople(value)}
                   value={numberOfPeople}
-                  onChange={(e) => setNumberOfPeople(e.target.value)}
-                  // bg={useColorModeValue('gray.100', 'gray.700')}
-                  borderRadius="md"
-                />
+                >
+                  <Stack direction="row" spacing={4}>
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
+                      <Radio key={num} value={num.toString()} colorScheme="purple">
+                        {num}
+                      </Radio>
+                    ))}
+                  </Stack>
+                </RadioGroup>
               </FormControl>
               <FormControl id="slotId" isRequired>
                 <FormLabel>

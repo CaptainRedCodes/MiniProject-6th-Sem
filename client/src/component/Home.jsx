@@ -1,3 +1,7 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+</style>
 import React, { useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
@@ -87,18 +91,25 @@ const Home = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <VStack spacing={4} textAlign="center" p={8} color="white">
-            <Heading as="h1" size="2xl" fontFamily="'Advent Pro', sans-serif" letterSpacing="wider">
-              The pure taste of
-            </Heading>
-            <Heading as="h1" size="4xl" fontFamily="'Aladin', cursive" color="#FF9933">
-              India
-            </Heading>
-            <Text fontSize="xl" maxW="600px" lineHeight="1.6">
-              DineEase, the ultimate app for effortless table reservations at your favorite restaurants,
-              blending convenience with the vibrant flavors of India.
-            </Text>
-          </VStack>
+         <VStack spacing={4} textAlign="center" p={8} color="white">
+           <Heading as="h1" size="2xl" fontFamily="'Advent Pro', sans-serif" letterSpacing="wider">
+             The pure taste of
+           </Heading>
+           <Heading
+             as="h1"
+             size="4xl"
+             fontFamily="'Aladin', cursive"
+             color="#FF9933"
+             fontWeight="normal"
+             style={{ fontFamily: "'Aladin', cursive" }}
+           >
+             India
+           </Heading>
+           <Text fontSize="xl" maxW="600px" lineHeight="1.6">
+             DineEase, the ultimate app for effortless table reservations at your favorite restaurants,
+             blending convenience with the vibrant flavors of India.
+           </Text>
+         </VStack>
         </Box>
       </Box>
 
